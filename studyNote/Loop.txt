@@ -1,0 +1,171 @@
+Loops
+A loop is a programming tool that repeats a set of instructions until a specified condition, called a stopping condition is reached. As a programmer, you’ll find that you rely on loops all the time! You’ll hear the generic term iterate when referring to loops; iterate simply means “to repeat”.
+
+========================================================================
+
+#The For Loop
+For Loop syntax
+
+for (let counter = 0; counter < 4; counter++) {
+  console.log(counter);
+}
+
+In this example, the output would be the following:
+
+0
+1
+2
+3
+
+Instead of writing out the same code over and over, loops allow us to tell computers to repeat a given block of code on its own. One way to give computers these instructions is with a for loop.
+
+The typical for loop includes an iterator variable that usually appears in all three expressions. The iterator variable is initialized, checked against the stopping condition, and assigned a new value on each loop iteration. Iterator variables can have any name, but it’s best practice to use a descriptive variable name.
+
+A for loop contains three expressions separated by ; inside the parentheses:
+
+an initialization starts the loop and can also be used to declare the iterator variable.
+a stopping condition is the condition that the iterator variable is evaluated against— if the condition evaluates to true the code block will run, and if it evaluates to false the code will stop.
+an iteration statement is used to update the iterator variable on each loop.
+
+
+Let’s break down the example:
+
+The initialization is let counter = 0, so the loop will start counting at 0.
+The stopping condition is counter < 4, meaning the loop will run as long as the iterator variable, counter, is less than 4.
+The iteration statement is counter++. This means after each loop, the value of counter will increase by 1. For the first iteration counter will equal 0, for the second iteration counter will equal 1, and so on.
+The code block is inside of the curly braces, console.log(counter), will execute until the condition evaluates to false. The condition will be false when counter is greater than or equal to 4 — the point that the condition becomes false is sometimes called the stop condition.
+This for loop makes it possible to write 0, 1, 2, and 3 programmatically.
+
+==========================================================================
+
+#Looping in Reverse
+What if we want the for loop to log 3, 2, 1, and then 0? With simple modifications to the expressions, we can make our loop run backward!
+
+To run a backward for loop, we must:
+
+Set the iterator variable to the highest desired value in the initialization expression.
+Set the stopping condition for when the iterator variable is less than the desired amount.
+The iterator should decrease in intervals after each iteration.
+
+
+for (let counter = 3; counter >= 0 ; counter--){
+console.log(counter);
+}
+// 3,2,1,0
+กรณีต้องการให้เรียงจากมากมาน้อย 
+ตัวแรกให้เป็นเลขสุงสุด ; >= ;  -- 
+
+========================================================================
+Looping through Arrays
+
+To loop through each element in an array, a for loop should use the array’s .length property in its condition.
+
+Check out the example below to see how for loops iterate on arrays:
+
+const animals = ['Grizzly Bear', 'Sloth', 'Sea Lion'];
+for (let i = 0; i < animals.length; i++){
+  console.log(animals[i]);
+}
+
+========================================================================
+#Nested Loops
+The for loop has 3 parts in it's initializing statement:
+for (initialize the index variable; index variable stop condition; increment index variable)
+A loop running inside another loop, we call that a nested loop.
+
+Let’s look at an example of a nested for loop:
+
+const myArray = [6, 19, 20];
+const yourArray = [19, 81, 2];
+for (let i = 0; i < myArray.length; i++) {
+  for (let j = 0; j < yourArray.length; j++) {
+    if (myArray[i] === yourArray[j]) {
+      console.log('Both loops have the number: ' + yourArray[j])
+    }
+  }
+};
+// out put "Both loops have the number: 19'
+
+--------------------------------------------------------------
+// Write your code below
+const bobsFollowers = ['Meow','Mandy','Sofia','Patty'];
+const tinasFollowers = ['Yana', 'Meow', 'Patty'];
+const mutualFollowers = [];
+for(let i = 0; i < bobsFollowers.length ; i++) {
+  for(let j = 0; j < tinasFollowers.length; j++){
+  if( bobsFollowers[i] === tinasFollowers[j]){
+    console.log('Both are friends with: ' + mutualFollowers.push(bobsFollowers[i]))
+   }
+ }
+}
+console.log(mutualFollowers)
+//Both are friends with: 1
+//Both are friends with: 2
+//[ 'Meow', 'Patty' ]
+====================================================================
+#The While Loop
+The while loop only has a stop condition:
+// A for loop that prints 1, 2, and 3
+for (let counterOne = 1; counterOne < 4; counterOne++){
+  console.log(counterOne);
+}
+
+// A while loop that prints 1, 2, and 3
+----------------------------------------------------------
+let counterTwo = 1;
+while (counterTwo < 4) {
+  console.log(counterTwo);
+  counterTwo++;
+}
+----------------------------------------------------------
+const cards = ['diamond', 'spade', 'heart', 'club'];
+
+// Write your code below
+let currentCard;
+while(currentCard !== 'diamond'){
+   currentCard = cards[Math.floor(Math.random() * 4)];
+  console.log(currentCard)
+
+}
+// out put will be random
+--------------------------------------------------------------
+
+====================================================================
+#Do...While Statements
+A do...while statement says to do a task once and then keep doing it until a specified condition is no longer met. The syntax for a do...while statement looks like this:
+
+let countString = '';
+let i = 0;
+
+do {
+  countString = countString + i;
+  i++;
+} while (i < 5);
+
+console.log(countString);
+
+=======================================================================
+#The break Keyword
+LOOPS
+Review
+Great job! In this lesson, we learned how to write cleaner code with loops. You now know:
+
+Loops perform repetitive actions so we don’t have to code that process manually every time.
+How to write for loops with an iterator variable that increments or decrements
+How to use a for loop to iterate through an array
+A nested for loop is a loop inside another loop
+while loops allow for different types of stopping conditions
+Stopping conditions are crucial for avoiding infinite loops.
+do...while loops run code at least once— only checking the stopping condition after the first execution
+The break keyword allows programs to leave a loop during the execution of its block
+
+10. Review
+
+
+
+
+
+
+
+
+

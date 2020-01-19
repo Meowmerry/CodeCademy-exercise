@@ -1,0 +1,322 @@
+#ITERATORS
+Introduction to Iterators
+
+Inspect the code in main.js. Notice the different methods being called on the arrays:
+
+.forEach()
+.map()
+.filter()
+Run the code to see the output!
+
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Iterators_and_Generators
+
+---------------------------------------------------------------
+12:51 AM 1/9/2020
+#The .forEach() Method
+The first iteration method that we’re going to learn is .forEach(). Aptly named, 
+.forEach() will execute the same code for each element of an array.
+#Syntax
+arr.forEach(callback(currentValue [, index [, array]])[, thisArg])
+
+Ex:
+const fruits = ['mango', 'papaya', 'pineapple', 'apple'];
+
+// Iterate over fruits below
+fruits.forEach(fruitsItem =>
+console.log(` I want to eat a ${fruitsItem}`));
+
+// I want to eat a mango
+// I want to eat a papaya
+// I want to eat a pineapple
+// I want to eat a apple
+............................................
+function printFruits(fruitsItem) {
+console.log(fruitsItem)
+}
+fruits.forEach(printFruits)
+
+//mango
+//papaya
+//pineapple
+//apple
+
+==============================================
+.forEach is passing the elements to the callback parameter (element), 
+one at a time and in order
+
+
+foreach calls the callback function for each element in the list/array.
+
+lets build our own very naive implementation:
+
+function theForEach(theArray, theCallBackFunction){
+  for (let i = 0; i < theArray.length; i++){
+      theCallBackFunction(theArray[i]);
+  }
+}
+
+const myArray = [1, 2, 3];
+
+const myCallBack = element => {
+  console.log(element);
+}
+
+theForEach(myArray, myCallBack);
+theForEach represents the forEach method you currently use
+
+
+myArray.theForEach(myCallBack)
+
+https://programmingwithmosh.com/javascript/whats-the-difference-between-foreach-and-map-in-javascript/
+====================================================================
+The .map() Method
+***forEach() changes the original array, whereas map() returns a new array, without mutating the original array.
+** forEach() doesn’t return anything from the callback, while map() returns a new array from the callback function.
+
+-------------------------------------------------------------------------------
++----------------+-------------------------------------+---------------------------------------+
+|                | foreach                             | map                                   |
++----------------+-------------------------------------+---------------------------------------+
+| Functionality  | Performs given operation on each    | Performs given "transformation" on    |
+|                | element of the array                | "copy" of each element                |
++----------------+-------------------------------------+---------------------------------------+
+| Return value   | Returns undefined                   | Returns new array with tranformed     |
+|                |                                     | elements leaving back original array  |
+|                |                                     | unchanged                             |
++----------------+-------------------------------------+---------------------------------------+
+| Preferrable    | Performing non-transformation like  | Obtaining array containing output of  |
+| usage scenario | processing on each element.         | some processing done on each element  |
+| and example    |                                     | of the array.                         |
+|                | For example, saving all elements in |                                       |
+|                | the database                        | For example, obtaining array of       |
+|                |                                     | lengths of each string in the         |
+|                |                                     | array                                 |
++----------------+-------------------------------------+---------------------------------------+
+
+=============================================================
+12:27 PM 1/9/2020:
+The .map() Method
+The second iterator we’re going to cover is .map(). When .map() is called on an array, it takes an argument of a callback function and returns a new array! Take a look at an example of calling .map():
+
+const numbers = [1, 2, 3, 4, 5]; 
+
+const bigNumbers = numbers.map(number => {
+  return number * 10;
+});
+.map() works in a similar manner to .forEach()— the major difference is that .map() returns a new array.
+
+In the example above:
+
+numbers is an array of numbers.
+bigNumbers will store the return value of calling .map() on numbers.
+numbers.map will iterate through each element in the numbers array and pass the element into the callback function.
+return number * 10 is the code we wish to execute upon each element in the array. This will save each value from the numbers array, multiplied by 10, to a new array.
+If we take a look at numbers and bigNumbers:
+
+console.log(numbers); // Output: [1, 2, 3, 4, 5]
+console.log(bigNumbers); // Output: [10, 20, 30, 40, 50]
+Notice that the elements in numbers were not altered and bigNumbers is a new array.
+
+--------------------------------------------------------------------------
+const animals = ['Hen', 'elephant', 'llama', 'leopard', 'ostrich', 'Whale', 'octopus', 'rabbit', 'lion', 'dog'];
+
+// Create the secretMessage array below
+// create a new array that contains the first character of each string in the animals array. Save the new array to a const variable named secretMessage.
+const secretMessage = animals.map(word => {
+    return word[0]
+  // return index[0]
+})
+console.log(secretMessage.join(''));
+
+const bigNumbers = [100, 200, 300, 400, 500];
+
+// Create the smallNumbers array below
+// Use .map() to divide all the numbers in bigNumbers by 100. Save the returned values to a variable declared with const called smallNumbers.
+const smallNumbers = bigNumbers.map( number => {
+return number / 100
+}
+)
+console.log(smallNumbers);
+===============================================================================
+#The .filter() Method
+.filter() returns a new array
+
+The callback function for the .filter() method should return true ofr false.
+
+
+EX:
+const words = ['chair', 'music', 'pillow', 'brick', 'pen', 'door']; 
+
+const shortWords = words.filter(word => {
+  return word.length < 6;
+});
+console.log(words); 
+// Output: ['chair', 'music', 'pillow', 'brick', 'pen', 'door']; 
+
+console.log(shortWords); // Output: ['chair', 'music', 'brick', 'pen', 'door']
+
+
+
+==================================================================
+//Call the .filter() method on randomNumbers to return values that are less than 250. Save them to a new array called smallNumbers, declared with const.
+
+const randomNumbers = [375, 200, 3.14, 7, 13, 852];
+
+// Call .filter() on randomNumbers below
+const smallNumbers = randomNumbers.filter( number => {
+ return number < 250;
+});
+console.log(smallNumbers);
+//[ 200, 3.14, 7, 13 ]
+
+
+const favoriteWords = ['nostalgia', 'hyperbole', 'fervent', 'esoteric', 'serene'];
+
+// Call .filter() on favoriteWords below
+//Invoke .filter() on the favoriteWords array to return elements that have more than 7 characters. 
+Save the returned array to a const variable named longFavoriteWords.
+
+const longFavoriteWords = favoriteWords.filter( word => {
+  return word.length > 7;
+})
+console.log(longFavoriteWords)
+
+//[ 'nostalgia', 'hyperbole', 'esoteric' ]
+======================================================================
+#The .findIndex() Method
+
+The .findIndex() Method 
+.findIndex()  uses to find the location of an element
+We sometimes want to find the location of an element in an array. That’s where the .findIndex() method comes in! Calling .findIndex() on an array will return the index of the first element that evaluates to true in the callback function.
+
+const jumbledNums = [123, 25, 78, 5, 9]; 
+
+const lessThanTen = jumbledNums.findIndex(num => {
+  return num < 10;
+});
+jumbledNums is an array that contains elements that are numbers.
+const lessThanTen = declares a new variable that stores the returned index number from invoking .findIndex().
+The callback function is an arrow function has a single parameter, num. Each element in the jumbledNums array will be passed to this function as an argument.
+num < 10; is the condition that elements are checked against. .findIndex() will return the index of the first element which evaluates to true for that condition.
+Let’s take a look at what lessThanTen evaluates to:
+
+console.log(lessThanTen); // Output: 3 
+If we check what element has index of 3:
+
+console.log(jumbledNums[3]); // Output: 5
+Great, the element in index 3 is the number 5. This makes sense since 5 is the first element that is less than 10.
+
+If there isn’t a single element in the array that satisfies the condition in the callback, then .findIndex() will return -1.
+
+const greaterThan1000 = jumbledNums.findIndex(num => {
+  return num > 1000;
+});
+
+console.log(greaterThan1000); // Output: -1
+
+=============================================================
+#The .reduce() Method
+The .reduce() method returns a single value after iterating through the elements of an array, thereby reducing the array.
+const numbers = [1, 2, 4, 10];
+
+const summedNums = numbers.reduce((accumulator, currentValue) => {
+  return accumulator + currentValue
+})
+
+console.log(summedNums) // Output: 17
+Here are the values of accumulator and currentValue as we iterate through the numbers array:
+Iteration	accumulator	currentValue	return value
+First			1	     2		  3
+Second			3	     4		  7
+Third			7	     10		  17
+
+-----------------------------------------------------------------------
+The .reduce() method can also take an optional second parameter to set an initial value for accumulator (remember, the first argument is the callback function!). For instance:
+
+const numbers = [1, 2, 4, 10];
+
+const summedNums = numbers.reduce((accumulator, currentValue) => {
+  return accumulator + currentValue
+}, 100)  // <- Second argument for .reduce()
+
+console.log(summedNums); // Output: 117
+
+Here’s an updated chart that accounts for the second argument of 100:
+
+Iteration #	accumulator	currentValue	return value
+First			100	    1		    101
+Second			101	    2		    103
+Third			103	    4		    107
+Fourth			107	    10		    117
+-----------------------------------------------------------------------
+#The syntax for a function expression looks like:
+const reduceExample = sampleArr.reduce(function(accumulator, currentValue) {
+
+});
+--------------------------------------------------------------------------
+#The syntax for an arrow function looks like:
+
+const reduceExample = sampleArr.reduce((accumulator, currentValue) => {
+
+});
+
+const words = ['unique', 'uncanny', 'pique', 'oxymoron', 'guise'];
+
+// Something is missing in the method call below
+
+console.log(words.some((word) => {
+  return word.length < 6;
+}));
+
+// Use filter to create a new array
+const interestingWords = words.filter(word => word.length > 5 )
+
+
+// Make sure to uncomment the code below and fix the incorrect code before running it
+
+console.log(interestingWords.every((word) => { 
+    return word.length > 5 
+} ));
+
+=================================================================
+ITERATORS
+Review
+Awesome job on clearing the iterators lesson! You have learned a number of useful methods in this lesson as well as how to use the JavaScript documentation from the Mozilla Developer Network to discover and understand additional methods. Let’s review!
+
+.forEach() is used to execute the same code on every element in an array but does not change the array and returns undefined.
+.map() executes the same code on every element in an array and returns a new array with the updated elements.
+.filter() checks every element in an array to see if it meets certain criteria and returns a new array with the elements that return truthy for the criteria.
+.findIndex() returns the index of the first element of an array which satisfies a condition in the callback function. It returns -1 if none of the elements in the array satisfies the condition.
+.reduce() iterates through an array and takes the values of the elements and returns a single value.
+All iterator methods takes a callback function that can be pre-defined, or a function expression, or an arrow function.
+You can visit the Mozilla Developer Network to learn more about iterator methods (and all other parts of JavaScript!).
+Instructions
+If you want to challenge yourself:
+
+Define a callback function before you use it in a iterator.
+Chain two iteration methods on the same array.
+Use the optional arguments in an iterator to include the index or the entire array. (Check out MDN’s Array iteration methods page for more information)
+Use .reduce() to take a multi-layered array and return a single layer array from scratch.
+
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array#Iteration_methods
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,217 @@
+#FUNCTIONS
+================================================
+Function Declarations 
+
+console.log(greetWorld()); // Output: Hello, World!
+
+function greetWorld() {
+  console.log('Hello, World!');
+}
+---------------------------------------------------------
+Call back funtion: 
+function sayThanks(){
+  console.log("Thank you for your purchase! We appreciate your business." )
+}
+sayThanks();
+
+
+==========================================
+09:30 AM 12/16/2019
+FUNCTIONS
+Parameters and Arguments == > for Input value for function
+
+One of the features added in ES6 is the ability to use default parameters. Default parameters allow parameters to have a predetermined value in case there is no argument passed into the function or if the argument is undefined when called.
+
+Take a look at the code snippet below that uses a default parameter:
+
+function greeting (name = 'stranger') {
+  console.log(`Hello, ${name}!`)
+}
+
+greeting('Nick') // Output: Hello, Nick!
+greeting() // Output: Hello, stranger!
+
+
+=======================================================
+9:59 PM 12/16/2019
+Function : Return
+
+function rectangleArea(width, height) {
+  if (width < 0 || height < 0) {
+    return 'You need positive integers to calculate area!';
+  }
+  return width * height;
+}
+console.log(rectangleArea(5, 7)) // 35
+
+....................................................
+
+function monitorCount(rows, columns){
+  return rows* columns  
+}
+const numOfMonitors = monitorCount(5,4)
+console.log(numOfMonitors) //20
+
+OR 
+
+function numOfMonitors(rows, columns) {
+const monitorCount = rows * columns;
+return monitorCount;
+}
+console.log(numOfMonitors(5, 4));
+
+.......................................................
+
+function monitorCount(rows, columns) {
+  return rows * columns;
+}
+function costOfMonitors(rows, columns){
+  return monitorCount(rows, columns) * 200
+}
+const totalCost = costOfMonitors(5,4)
+
+console.log(totalCost)
+
+
+====================================================
+
+10:08 PM 12/16/2019
+Function Expressions:
+
+const plantNeedsWater = function(day){
+ if(day === 'Wednesday'){
+   return true;
+ }else {
+  return false}
+}
+console.log(plantNeedsWater('Tuesday'))
+
+
+======================================================
+
+10:50 PM 12/16/2019
+#FUNCTIONS JavaScript:
+
+//Defining the function
+function sum(num1, num2){
+  return num1 + num2
+}
+
+//Calling the function:
+sum(3,6) //9
+
+.......................................................
+
+#JavaScript Function Declarations.
+function add(num1, num2){
+   return num1 + num2
+}
+.......................................................
+#Calling JavaScript Functions
+
+//Defining the function
+function sum(num1, num2) {
+  return num1 + num2;
+)
+
+//Calling the function, passing in 2 and 4 as parameters
+sum(2,4) //6
+
+.......................................................
+
+#JavaScript Function Parameters.
+//The parameter is name
+function sayHello(name){
+  return `Hello, ${name}!`;
+}
+.......................................................
+
+#KeyWrod in JavaScript
+//With return
+function sum(num1, num2) {
+  return num1 + num2;
+}
+
+//Without return, so the function doesn's output the sum
+function sum(num1, num2){
+  return num1 + num2;
+}
+
+//Without return, so the function doesn't output the sum
+function sum(num1, num2) {
+  num1 + num2;
+}
+
+
+.......................................................
+
+#JavaScript Anonymous Function 
+
+//Name function 
+function rocketToMars(){
+  return 'BOOM';
+}
+
+// Anonymous function
+cost rocketToMars = fuction(){
+  return 'BOOM';
+}
+
+.......................................................
+
+#Javascript Function Expressions 
+
+const dog = function() {
+  return 'Woof!';
+}
+
+.......................................................
+
+#Arrow Function in JavaScript(ES6)
+
+//Arrow function with two arguments
+const sum = (firstParm, secondParam) = {
+  return firstParam + secondParam;
+};
+console.log(sum(2,5));  // Prints : 7
+
+//Arrow function with no arguments
+const printHello =() => {
+   console.log('hello')'
+}
+printHello();  // Prints : hello
+
+
+//Arrow functions with a single argument
+const checkWeight = weight => {
+  console.log(`Baggage weight : ${weight} kilograms.`)
+};
+checkWeight(25) // print : Baggage weight : 25 kilorams.
+
+//Concise arrow functions
+const multiply = (a,b) => a * b ;
+console.log(multiply(2,30));  //print : 60
+
+
+==================================================================
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

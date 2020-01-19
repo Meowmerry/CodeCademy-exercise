@@ -1,0 +1,75 @@
+เทคนิคการใช้ ...(Spread Operator) กับ Object ใน javascript
+
+1. Adding Properties
+    สร้าง object ใหม่ จากการ clone object และเพิ่ม properties ใหม่เข้าไปด้วย
+const user = { id: 1, name: 'js' }
+const userWithPass = { ...user, password: 'JSขำๆ' }
+console.log(userWithPass) //{ id: 1, name: 'js', password: 'JSขำๆ' }
+
+2. Merge Objects
+   ร่วม object หลายๆ object เข้าด้วยกัน ถ้ามี properties ที่ซ้ำกันจะอ้างอิงค่าตาม object ที่อยู่หลังสุด
+const userProp1 = { id: 1, name: 'JS', age: 1 }
+const userProp2 = { id: 1, lastname: 'ขำๆ', age: 2 }
+const userProp3 = { id: 1, skill: 'javascript', age: 3 }
+const user = { ...userProp1, ...userProp2, ...userProp3 }
+console.log(user)//{ id: 1, name: 'JS', age: 3, lastname: 'ขำๆ', skill: 'javascript' }
+
+3. Exclude Object Properties
+    สร้าง object ใหม่ จากการ clone และลบ properties ที่ไม่ต้องการ
+const noPassword = ({ password, ...rest }) => rest
+const user = { id: 1, name: 'JS', password: 'JSขำๆ' }
+const newUser = noPassword(user)
+console.log(newUser)//{ id: 1, name: 'JS' }
+
+4.Dynamically Exclude Properties
+   ฟังก์ชั่นสำหรับลบ properties ที่ไม่ต้องการแบบ dynamic
+const user = { id: 1, name: 'JS', password: 'JSขำๆ' }
+const removeProperty = prop => ({ [prop]: _, ...rest }) => rest
+const userNoPass = removeProperty('password')(user)
+const userNoId = removeProperty('id')(user)
+console.log(userNoPass);//{ id: 1, name: 'JS' }
+console.log(userNoId)//{ name: 'JS', password: 'JSขำๆ' }
+
+5.Organize Properties
+    จัดระเบียบให้กับ properties ใน object เช่น ต้องการให้ id เป็นคุณสมบัติแรกสุดของ object
+let user = { password: 'JS ขำๆ', name: 'js', id: 1 }
+const organize = object => ({ id: undefined, ...object })
+user = organize(user)
+console.log(user)
+
+6. Default Properties
+   กำหนดค่าเริ่มต้นให้กับ properties เมื่อไม่มี properties นั้น ๆ ใน object
+let user1 = { id: 1, name: 'Js' }
+let user2 = { id: 2, name: 'ขำๆ', quotes: ["สวัสดีปีใหม่"] }
+const setDefaults = ({ quotes = [], ...object }) =>
+  ({ ...object, quotes })
+user1 = setDefaults(user1); user2 = setDefaults(user2)
+console.log(user1);//{ id: 1, name: 'Js', quotes: [] }
+console.log(user2);//{ id: 2, name: 'ขำๆ', quotes: [ 'สวัสดีปีใหม่' ] }
+
+7. Renaming Properties
+เปลี่ยนชื่อให้กับ properties ใน object เช่น เปลี่ยน จากตัวพิมพ์ใหญ๋เป็นตัวพิมพ์เล็ก
+let user = { ID: 1, name: "JS" }
+const renamed = ({ ID, ...object }) => ({ id: ID, ...object })
+user = renamed(user)
+console.log(user) //{ id: 1, name: 'JS' }
+
+8. Add conditional properties
+ทำให้แน่ใจว่า properties ที่จะถูกเพิ่มเข้ามา มีค่า ถ้าไม่มีค่าก็ไม่เพิ่ม properties นั้น
+const user = { id: 1, name: 'JS' }
+let password = 'JSขำๆ'
+const userWithPassword = {
+  ...user,
+  ...(password && { password })
+}
+console.log(userWithPassword)
+//{ id: 1, name: 'JS', password: 'JSขำๆ' }
+password = ''
+const userNoPassword = {
+  ...user,
+  ...(password && { password })
+}
+console.log(userNoPassword)
+//{ id: 1, name: 'JS' }
+
+#javascript #js JS ขำๆ

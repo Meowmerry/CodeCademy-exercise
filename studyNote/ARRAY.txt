@@ -1,0 +1,202 @@
+10:13 AM 12/27/2019
+#ARRAY
+-----------------------------------------------------------------------
+Create an Array
+
+One way we can create an array is to use an array literal. An array literal creates an array by wrapping items in square brackets [].
+
+Let’s take a closer look at the syntax in the array example:
+
+The array is represented by the square brackets [] and the content inside.
+Each content item inside an array is called an element.
+There are three different elements inside the array.
+Each element inside the array is a different data type.
+
+----------------------------------------------------------------------
+const hobbies = ['Keep a journal', 'Take a falconry class', 'Learn to juggle'];
+console.log(hobbies)
+
+========================================================================
+
+Accessing Elements
+Each element in an array has a numbered position known as its index. We can access individual items using their index, which is similar to referencing an item in a list based on the item’s position.
+
+Arrays in JavaScript are zero-indexed, meaning the positions start counting from 0 rather than 1. Therefore, the first item in an array will be at position 0. Let’s see how we could access an element in an array:
+
+Diagram outlining how to access the property of an array using the index of the element
+In the code snippet above:
+
+cities is an array that has three elements.
+We’re using bracket notation, [] with the index after the name of the array to access the element.
+cities[0] will access the element at index 0 in the array cities. You can think of cities[0] as accessing the space in memory that holds the string 'New York'.
+You can also access individual characters in a string using bracket notation and the index. For instance, you can write:
+
+const hello = 'Hello World';
+console.log(hello[6]);
+// Output: W
+The console will display W since it is the character that is at index 6.
+--------------------------------------------------------------------------
+const famousSayings = ['Fortune favors the brave.', 'A joke is a very serious thing.', 'Where there is love there is life.'];
+
+const listItem = famousSayings[0];
+console.log(listItem) // Fortune favors the brave.
+console.log(famousSayings[2]) // Where there is love there is life.
+console.log(famousSayings[3]) // undefined
+
+=============================================================================
+
+#Update Elements
+In the previous exercise, you learned how to access elements inside an array or a string by using an index. Once you have access to an element in an array, you can update its value.
+---------------------------------------------------------------
+let seasons = ['Winter', 'Spring', 'Summer', 'Fall'];
+
+seasons[3] = 'Autumn';
+console.log(seasons); 
+//Output: ['Winter', 'Spring', 'Summer', 'Autumn']
+
+--------------------------------------------------------------
+let groceryList = ['bread', 'tomatoes', 'milk'];
+groceryList[1] = 'avocados'
+console.log(groceryList); //[ 'bread', 'avocados', 'milk' ]
+
+=================================================================
+#Arrays with let and const
+let condiments = ['Ketchup', 'Mustard', 'Soy Sauce', 'Sriracha'];
+
+const utensils = ['Fork', 'Knife', 'Chopsticks', 'Spork'];
+
+condiments[0] = 'Mayo'
+console.log(condiments) //[ 'Mayo', 'Mustard', 'Soy Sauce', 'Sriracha' ]
+condiments = ['Mayo']
+utensils[3] = 'Spoon'
+console.log(utensils) //[ 'Fork', 'Knife', 'Chopsticks', 'Spoon' ]
+===========================================================================
+
+#The .length property
+
+One of an array’s built-in properties is length and it returns the number of items in the array. We access the .length property just like we do with strings. Check the example below:
+
+const newYearsResolutions = ['Keep a journal', 'Take a falconry class'];
+
+console.log(newYearsResolutions.length);// Output:  2
+====================================================================================
+#The .push() Method
+One method, .push() allows us to add items to the end of an array. Here is an example of how this is used:
+
+const itemTracker = ['item 0', 'item 1', 'item 2'];
+
+itemTracker.push('item 3', 'item 4');
+
+console.log(itemTracker); 
+// Output: ['item 0', 'item 1', 'item 2', 'item 3', 'item 4'];
+-------------------------------------------------------------------------------------
+const chores = ['wash dishes', 'do laundry', 'take out trash'];
+chores.push('study coding', 'work out at the gym')
+console.log(chores)
+
+//[ 'wash dishes','do laundry','take out trash','study coding','work out at the gym' ]
+============================================================================================
+#The .pop() Method
+Another array method, .pop(), removes the last item of an array.
+const newItemTracker = ['item 0', 'item 1', 'item 2'];
+
+const removed = newItemTracker.pop();
+
+console.log(newItemTracker); // Output: [ 'item 0', 'item 1' ]
+console.log(removed);// Output: item 2
+-----------------------------------------------------------------------------------------------
+const chores = ['wash dishes', 'do laundry', 'take out trash', 'cook dinner', 'mop floor'];
+chores.pop();
+console.log(chores); 
+//[ 'wash dishes', 'do laundry', 'take out trash', 'cook dinner' ]
+
+==================================================================================================
+#More Array Methods
+Some arrays methods that are available to JavaScript developers include: .join(), .slice(), .splice(), .shift(), .unshift(), and .concat() amongst many others. Using these built-in methods make it easier to do some common tasks when working with arrays.
+------------------------------------------------------------------------
+.shift() // will take out of the first index
+------------------------------------------------------------------------
+.unshift() // will unshif and add to the array after you .shift
+------------------------------------------------------------------------
+
+.join() // will join array
+
+------------------------------------------------------------------------
+.slice() //
+คือการเรียกตัวที่กำหนด และตัวที่สองคือเรียกตัวเอง และไม่เอาตัวหลังถัดไปเช่น แต่ไม่ได้ทำการลบข้อมูลออก
+แค่เราสามารถเรียกบางตัวได้
+
+The slice() method returns a shallow copy of a portion of an array into a new array object selected from begin to end (end not included) where begin and end represent the index of items in that array. The original array will not be modified. 
+const animals = ['ant', 'bison', 'camel', 'duck', 'elephant'];
+
+console.log(animals.slice(2));
+// ["camel", "duck", "elephant"]
+
+console.log(animals.slice(2, 3));
+// ["camel"]
+
+console.log(animals.slice(0, 2));
+//  ["ant", "bison"]
+======================================
+const groceryList = ['orange juice', 'bananas', 'coffee beans', 'brown rice', 'pasta', 'coconut oil', 'plantains'];
+groceryList.shift();
+console.log(groceryList);
+groceryList.unshift('popcorn');
+console.log(groceryList.slice(1,4));
+console.log(groceryList);
+
+console.log(groceryList.indexOf('brown rice'))
+// const pastaIndex =  groceryList.indexOf('pasta')
+// console.log(pastaIndex)
+------------------------------------------------------------------------
+.splice() //
+
+------------------------------------------------------------------------
+.concat() // คือการรวม Array เข้าด้วยกันให้เป็นหนึ่ง
+
+------------------------------------------------------------------------
+=========================================
+#Arrays and Functions
+const concept = ['arrays', 'can', 'be', 'mutated'];
+
+function changeArr(arr){
+  arr[3] = 'MUTATED';
+}
+
+changeArr(concept);
+console.log(concept); //[ 'arrays', 'can', 'be', 'MUTATED' ]
+
+function removeElement(newArr){
+  newArr.pop()
+}
+
+removeElement(concept);
+console.log(concept)//[ 'arrays', 'can', 'be' ]
+=========================================================
+#Nested Arrays
+const nestedArr = [[1], [2, 3]];
+
+console.log(nestedArr[1]); // Output: [2, 3]
+
+
+const nestedArr = [[1], [2, 3]];
+
+console.log(nestedArr[1]); // Output: [2, 3]
+console.log(nestedArr[1][0]); // Output: 2
+
+-------------------------------------------
+const numberClusters = [[1,2], [3,4], [5,6]]
+const target = numberClusters[2][1]
+console.log(numberClusters[2][1])  // Output: 6
+
+
+
+
+
+
+
+
+
+
+
+

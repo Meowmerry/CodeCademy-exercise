@@ -1,0 +1,128 @@
+
+....................................................................
+
+#Properties
+dot operator (.length)
+
+...................................................................
+#Methods
+console.log('hello'.toUpperCase()); // Prints 'HELLO'
+console.log('Hey'.startsWith('H')); // Prints true
+
+If we browse the JavaScript string documentation, we find several built-in string methods that each accomplish a different goal. 
+The one method that seems ideal for us is .trim()
+
+..............................................................
+#Built-in Objects
+Math.random() random number 
+
+Math.floor() rounds the number down to the nearest whole number.
+
+Math.round(x) Returns the value of a number rounded to the nearest integer.
+
+Math.max([x[, y[, …]]]) Returns the largest of zero or more numbers.
+Math.min([x[, y[, …]]]) Returns the smallest of zero or more numbers.
+Math.ceil(x) Returns the smallest integer greater than or equal to a number.
+
+Number.isInteger()
+Determine whether the passed value is an integer.
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number
+============================================================================================
+
+# typeof operator for checnk data types
+
+let newVariable = 'Playing around with typeof.';
+console.log(typeof newVariable);
+
+
+Variables hold reusable data in a program and associate it with a name.
+Variables are stored in memory.
+
+()parentheses
+{}curly braces
+===============================================================
+10:04 PM 12/15/2019
+Comparison Operators
+syntax:
+
+Less than: <
+Greater than: >
+Less than or equal to: <=
+Greater than or equal to: >=
+Is equal to: ===
+Is NOT equal to: !==
+
+==================================================
+CONDITIONAL STATEMENTS
+Logical Operators:
+the and operator (&&)
+the or operator (||)
+the not operator, otherwise known as the bang operator (!)
+
+=================================================
+10:05 PM 12/15/2019
+Truthy and Falsy
+let wordCount = 2;
+
+if (wordCount) {
+  console.log("Great! You've started your work!");
+} else {
+  console.log('Better get to work!');
+}
+
+
+let favoritePhrase = '';
+
+if (favoritePhrase) {
+  console.log("This string doesn't seem to be empty.");
+} else {
+  console.log('This string is definitely empty.');
+}
+=================================================
+10:09 PM 12/15/2019
+Truthy and Falsy Assignment
+
+let tool = '';
+
+// Use short circuit evaluation to assign  writingUtensil variable below:
+
+let writingUtensil = tool || 'pen'
+
+console.log(`The ${writingUtensil} is mightier than the sword.`);
+=====================================================================
+10:15 PM 12/15/2019
+!!! CONDITIONAL STATEMENTS
+Ternary Operator !!!
+isNightTime ? console.log('Turn on the lights!') : console.log('Turn off the lights!');
+==================================================================
+11:11 PM 12/15/2019
+CONDITIONAL STATEMENTS
+Else If Statements
+
+let stopLight = 'yellow';
+
+if (stopLight === 'red') {
+  console.log('Stop!');
+} else if (stopLight === 'yellow') {
+  console.log('Slow down.');
+} else if (stopLight === 'green') {
+  console.log('Go!');
+} else {
+  console.log('Caution, unknown!');
+}
+======================================================
+11:27 PM 12/15/2019
+The switch keyword
+
+A switch statement provides an alternative syntax that is easier to read and write. A switch statement looks like this:
+let groceryItem = 'papaya';
+
+switch (groceryItem) {
+  case 'tomato':
+    console.log('Tomatoes are $0.49');
+    break;
+  default:
+    console.log('Invalid item');
+    break;
+}
+==========================================================
