@@ -1,0 +1,43 @@
+class Dog {
+  constructor(name) {
+    this._name = name;
+    this._behavior = 0;
+  }
+
+  get name() {
+    return this._name;
+  }
+  get behavior() {
+    return this._behavior;
+  }   
+
+  incrementBehavior() {
+    this._behavior ++;
+  }
+}
+
+const halley = new Dog('Halley');
+console.log(halley.name); // Print name value to console = Halley
+console.log(halley.behavior); // Print behavior value to console  =0
+halley.incrementBehavior(); // Add one to behavior
+console.log(halley.name); // Print name value to console = Halley
+console.log(halley.behavior); // Print behavior value to console  =1
+
+
+  //=================================================
+  let halley = {
+  _name: 'Halley',
+  _behavior: 0,
+
+  get name() {
+    return this._name;
+  },
+
+  get behavior() {
+    return this._behavior;
+  },
+
+  incrementBehavior() {
+    this._behavior++;
+  }
+}

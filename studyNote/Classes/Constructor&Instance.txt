@@ -1,0 +1,47 @@
+11:33 PM 1/20/2020
+CLASSES
+Constructor
+-------------------------------------------------------------------
+In the last exercise, you created a class called Dog, and used it to produce a Dog object.
+
+Although you may see similarities between class and object syntax, there is one important method that sets them apart. It’s called the constructor method. JavaScript calls the constructor() method every time it creates a new instance of a class.
+
+class Dog {
+  constructor(name) {
+    this.name = name;
+    this.behavior = 0;
+  }
+}
+Dog is the name of our class. By convention, we capitalize and CamelCase class names.
+JavaScript will invoke the constructor() method every time we create a new instance of our Dog class.
+This constructor() method accepts one argument, name.
+Inside of the constructor() method, we use the this keyword. In the context of a class, this refers to an instance of that class. In the Dog class, we use this to set the value of the Dog instance’s name property to the name argument.
+Under this.name, we create a property called behavior, which will keep track of the number of times a dog misbehaves. The behavior property is always initialized to zero.
+In the next exercise, you will learn how to create Dog instances.
+
+=======================================================================
+
+11:40 PM 1/20/2020
+
+CLASSES
+Instance
+------------------------
+Now, we’re ready to create class instances. An instance is an object that contains the property names and methods of a class, but with unique property values. Let’s look at our Dog class example.
+
+class Dog {
+  constructor(name) {
+    this.name = name;
+    this.behavior = 0;
+  } 
+}
+
+const halley = new Dog('Halley'); // Create new Dog instance
+console.log(halley.name); // Log the name value saved to halley
+// Output: 'Halley'
+Below our Dog class, we use the new keyword to create an instance of our Dog class. Let’s consider the line of code step-by-step.
+
+We create a new variable named halley that will store an instance of our Dog class.
+We use the new keyword to generate a new instance of the Dog class. The new keyword calls the constructor(), runs the code inside of it, and then returns the new instance.
+We pass the 'Halley' string to the Dog constructor, which sets the name property to 'Halley'.
+Finally, we log the value saved to the name key in our halley object, which logs 'Halley' to the console.
+Now you know how to create instances. In the next exercise, you will learn how to add getters, setters, and methods.
