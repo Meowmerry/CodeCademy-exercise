@@ -45,3 +45,28 @@ const callMyNightSky = () => {
 
 console.log(callMyNightSky()); //Night Sky: The Moon, Sirius, The Milky Way
 console.log(stars); //Sirius
+
+//=========================================================================const logVisibleLightWaves = () => {
+  
+const logVisibleLightWaves = () => {
+    let lightWaves = 'Moonlight';
+    let region = 'The Arctic';
+    // Add if statement here:
+    if( region === 'The Arctic'){
+      let lightWaves = 'Northern Lights'
+      console.log(lightWaves) //Northern Lights
+      }
+    
+    console.log(lightWaves); //Moonlight
+  };
+  
+  logVisibleLightWaves();
+
+  //======================================
+  const isLoggedIn = true;
+  if(isLoggedIn == true) {
+    const statusMessage = "User is logged in.";
+    console.log(statusMessage);
+  }
+
+ //console.log(statusMessage); It will be threw Error!! if we log outside the scope
