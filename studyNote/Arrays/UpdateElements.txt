@@ -1,3 +1,5 @@
+18 Feb 2020
+
 ARRAYS
 Update Elements
 In the previous exercise, you learned how to access elements inside an array or 
