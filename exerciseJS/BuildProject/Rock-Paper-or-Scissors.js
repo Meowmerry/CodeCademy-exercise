@@ -32,6 +32,7 @@ const determineWinner = (userChoice, computerChoice) => {
     return 'Congratulation you won!';
   }
 } 
+
   if(userChoice === 'paper') {
     if(computerChoice === 'scissors'){
     return 'Sorry! The computer won! ';
@@ -50,6 +51,7 @@ const determineWinner = (userChoice, computerChoice) => {
 		return 'Contratulation you won!'
 	}
 }
+
 // console.log(determineWinner('paper', 'rock'))
 
 const playGame = () => {
@@ -62,3 +64,13 @@ const playGame = () => {
 }
 
 playGame();
+
+
+// const getUserChoice = userInput => {
+//     userInput = userInput.toLowerCase();
+//     if(userInput === "rock" || userInput == "paper" || userInput === "scissors" || userInput === "boml"){
+//       return userInput
+//     } else {
+//       console.log('Please input rock, paper, scissors or bomb')
+//     }
+// }

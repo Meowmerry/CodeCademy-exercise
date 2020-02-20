@@ -80,3 +80,32 @@ console.log(groceryList); //[ 'popcorn','bananas','coffee beans', 'brown rice','
 
 const pastaIndex = groceryList.indexOf('pasta');
 console.log(pastaIndex); // 4
+
+//========================================================
+
+// Arrays and Functions
+const concept = ['arrays', 'can', 'be', 'mutated'];
+
+function changeArr(arr){
+  arr[1] = 'CAN-CAN';
+
+}
+
+
+changeArr(concept);
+console.log(concept); //[ 'arrays', 'CAN-CAN', 'be', 'mutated' ]
+
+function removeElement(newArr) {
+  newArr.push('Hello')
+}
+
+removeElement(concept);
+console.log(concept); // [ 'arrays', 'can', 'be' ]
+
+//======================================================================
+//Nested Arrays
+let numberClusters = [[1,2], [3,4], [5,6]];
+const target = numberClusters[2][1];
+console.log(target) //6
+
+//======================================================================
