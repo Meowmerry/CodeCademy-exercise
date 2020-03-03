@@ -16,7 +16,6 @@ const friends = [
     src: "https://s3.amazonaws.com/codecademy-content/courses/React/react_photo-alpaca.jpg"
   }
 ];
-
 // New component class starts here:
 class Friend extends React.Component {
   render() {
