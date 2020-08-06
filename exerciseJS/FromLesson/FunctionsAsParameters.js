@@ -17,6 +17,7 @@ const timeFuncRuntime = funcParameter => {
 
 // Write your code below
 const time2p2 = timeFuncRuntime(checkThatTwoPlusTwoEqualsFourAMillionTimes)
+
 const checkConsistentOutput = (func, val) => {
   let firstTry = func(val);
   let secondTry = func(val);
